@@ -1,26 +1,71 @@
-[
-  {
-    "id": "men-01",
-    "titre": "Menuisier poseur H/F",
-    "secteur": "Menuiserie",
-    "lieu": "Lyon 69008",
-    "debut": "Dès que possible",
-    "description": "Pose de menuiseries intérieures et extérieures chez des clients particuliers et professionnels. Expérience souhaitée 2 ans minimum, permis B apprécié."
-  },
-  {
-    "id": "char-01",
-    "titre": "Charpentier traditionnel H/F",
-    "secteur": "Charpente",
-    "lieu": "Villeurbanne",
-    "debut": "Octobre 2026",
-    "description": "Chantier de rénovation de combles et ossature bois. Lecture de plans requise, CAP charpente ou expérience équivalente."
-  },
-  {
-    "id": "age-01",
-    "titre": "Agenceur cuisiniste H/F",
-    "secteur": "Agencement",
-    "lieu": "Lyon & environs",
-    "debut": "Dès que possible",
-    "description": "Pose de cuisines équipées et mobilier sur mesure chez le particulier. Maîtrise de l'outillage électroportatif, sens de la finition."
-  }
-]
+{
+  "offres": [
+    {
+      "titre": "Maçons traditionnels (H/F)",
+      "lieu": "Lyon (69)",
+      "date": "Dès que possible",
+      "ref": "mt02",
+      "description": "Chantiers de rénovation en maçonnerie traditionnelle.",
+      "contrat": "Intérim",
+      "profil": ["Expérience en maçonnerie traditionnelle", "Habitude des chantiers de rénovation"]
+    },
+    {
+      "titre": "Menuisier atelier (H/F)",
+      "lieu": "Lyon et environs",
+      "date": "Dès que possible",
+      "ref": "ma02",
+      "description": "Fabrication en atelier, sous la responsabilité du chef d'atelier.",
+      "contrat": "Intérim",
+      "missions": ["Débit, usinage et assemblage", "Travail sur machines à bois traditionnelles", "Préparation des éléments avant pose"],
+      "profil": ["Expérience en atelier de menuiserie"]
+    },
+    {
+      "titre": "Chef d'équipe étanchéité (H/F)",
+      "lieu": "Lyon (69)",
+      "date": "Dès que possible",
+      "ref": "cee01",
+      "description": "Encadrement d'une équipe sur des chantiers d'étanchéité. Longue mission.",
+      "contrat": "Intérim",
+      "duree": "Longue mission",
+      "profil": ["Expérience confirmée en étanchéité", "Encadrement d'équipe", "Permis B exigé"]
+    },
+    {
+      "titre": "Menuisier agenceur atelier (H/F)",
+      "lieu": "Vaulx-en-Velin (69)",
+      "date": "Dès que possible",
+      "ref": "ma01",
+      "description": "Fabrication d'agencements en atelier. Maîtrise de la programmation sur commande numérique exigée.",
+      "contrat": "Intérim",
+      "profil": ["Programmation et conduite de commande numérique", "Lecture de plans", "Expérience en atelier d'agencement"]
+    },
+    {
+      "titre": "Plaquiste confirmé (H/F)",
+      "lieu": "Lyon et environs",
+      "date": "Dès que possible",
+      "ref": "pc01",
+      "description": "Missions de plaquisterie sur des chantiers de Lyon et de ses environs.",
+      "contrat": "Intérim",
+      "missions": ["Cloisons et doublages sur ossature métallique", "Pose de plaques BA13 et de faux plafonds", "Bandes et finitions"],
+      "profil": ["Plaquiste confirmé, autonome sur chantier"]
+    },
+    {
+      "titre": "Charpentier couvreur (H/F)",
+      "lieu": "Grand Lyon",
+      "date": "Dès que possible",
+      "ref": "cc01",
+      "description": "Nombreuses missions à pourvoir sur le Grand Lyon, en charpente et en couverture.",
+      "contrat": "Intérim",
+      "profil": ["Expérience en charpente et en couverture", "Habitude du travail en hauteur"]
+    },
+    {
+      "titre": "Menuisier poseur (H/F)",
+      "lieu": "Lyon et environs",
+      "date": "Dès que possible",
+      "ref": "mp01",
+      "description": "Pose de menuiseries intérieures et extérieures sur des chantiers de Lyon et de ses environs. Véhicule personnel apprécié.",
+      "contrat": "Intérim",
+      "missions": ["Pose de fenêtres, portes et huisseries", "Pose de placards, habillages et parquets", "Réglages et finitions"],
+      "profil": ["Expérience en pose de menuiseries", "Autonomie sur chantier", "Véhicule personnel apprécié"]
+    }
+  ]
+}

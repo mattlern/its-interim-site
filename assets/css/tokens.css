@@ -1,0 +1,173 @@
+/* ==========================================================================
+   ITS Intérim — Design tokens
+   Style Groupe LMI (losanges, cartes très arrondies, titres condensés,
+   boutons pilule) décliné en rouge vif.
+   Couches : primitives → sémantiques → composants.
+   ========================================================================== */
+
+/* ---------- 1. Primitives ---------- */
+:root {
+  /* Rouge vif ITS */
+  --red-50:  #FEF1F0;
+  --red-100: #FCDCD9;
+  --red-200: #F7B3AD;
+  --red-400: #F23A45;
+  --red-500: #E30613;
+  --red-600: #C70511;
+  --red-700: #A1040E;
+  --red-800: #74030A;
+
+  /* Graphite (mine du crayon de charpentier) */
+  --graphite-950: #131417;
+  --graphite-900: #1C1E22;
+  --graphite-800: #26292E;
+  --graphite-700: #353940;
+  --graphite-600: #484D56;
+  --graphite-500: #5B6069;
+  --graphite-400: #878C95;
+  --graphite-300: #B3B7BE;
+
+  /* Pierre : gris chauds des sites du groupe */
+  --stone-50:  #FAF9F7;
+  --stone-100: #F3F1EE;
+  --stone-200: #E8E5E1;
+  --stone-300: #D7D3CD;
+  --white: #FFFFFF;
+
+  /* Bleu Groupe LMI, réservé aux renvois vers les sites du groupe */
+  --lmi-blue: #1F4A7C;
+
+  --success-600: #12703A;
+  --success-50:  #E8F4EC;
+
+  /* Transparences */
+  --white-a08: rgb(255 255 255 / .08);
+  --white-a14: rgb(255 255 255 / .14);
+  --white-a30: rgb(255 255 255 / .30);
+  --white-a60: rgb(255 255 255 / .60);
+  --white-a92: rgb(255 255 255 / .92);
+  --ink-a06: rgb(19 20 23 / .06);
+  --ink-a40: rgb(19 20 23 / .40);
+  --ink-a70: rgb(19 20 23 / .70);
+  --red-a28: rgb(227 6 19 / .28);
+
+  /* Typo */
+  --font-display: "Barlow Condensed", "Roboto Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --fs-12: .75rem;
+  --fs-14: .875rem;
+  --fs-15: .9375rem;
+  --fs-16: 1rem;
+  --fs-17: 1.0625rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-display: clamp(3rem, 1.7rem + 5.6vw, 6.4rem);
+  --fs-h1: clamp(2.75rem, 1.9rem + 3.8vw, 5rem);
+  --fs-h2: clamp(2.1rem, 1.55rem + 2.3vw, 3.4rem);
+  --fs-h3: clamp(1.4rem, 1.25rem + .6vw, 1.8rem);
+
+  /* Espacements (base 4) */
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: .75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+
+  /* Rayons */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --r-xl: 36px;
+  --r-blob: 56px;
+  --r-pill: 999px;
+
+  /* Mouvement */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.77, 0, .18, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-1: 160ms;
+  --dur-2: 260ms;
+  --dur-3: 420ms;
+  --dur-4: 700ms;
+
+  /* Ombres */
+  --shadow-1: 0 1px 2px rgb(19 20 23 / .06), 0 3px 10px rgb(19 20 23 / .05);
+  --shadow-2: 0 10px 30px rgb(19 20 23 / .10);
+  --shadow-3: 0 24px 60px rgb(19 20 23 / .20);
+  --shadow-red: 0 12px 30px rgb(227 6 19 / .28);
+}
+
+/* ---------- 2. Sémantiques ---------- */
+:root {
+  color-scheme: light;
+
+  --color-bg: var(--white);
+  --color-bg-alt: var(--stone-100);
+  --color-bg-soft: var(--stone-50);
+  --color-bg-inverse: var(--graphite-900);
+  --color-bg-inverse-2: var(--graphite-800);
+  --color-surface: var(--white);
+
+  --color-text: var(--graphite-900);
+  --color-text-muted: var(--graphite-500);
+  --color-text-inverse: var(--white);
+  --color-text-inverse-muted: var(--graphite-300);
+
+  --color-primary: var(--red-500);
+  --color-primary-hover: var(--red-600);
+  --color-primary-active: var(--red-700);
+  --color-primary-soft: var(--red-50);
+  --color-primary-soft-2: var(--red-100);
+  --color-primary-line: var(--red-200);
+  --color-on-primary: var(--white);
+
+  --color-border: var(--stone-200);
+  --color-border-strong: var(--stone-300);
+  --color-decor: var(--stone-200);
+  --color-focus: var(--red-500);
+
+  --color-success: var(--success-600);
+  --color-success-soft: var(--success-50);
+  --color-error: var(--red-700);
+  --color-group: var(--lmi-blue);
+}
+
+/* ---------- 3. Composants ---------- */
+:root {
+  --wrap: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section-y: clamp(4rem, 2.8rem + 5vw, 7.5rem);
+
+  --header-h: 78px;
+  --header-h-compact: 64px;
+
+  --btn-h: 54px;
+  --btn-h-sm: 44px;
+  --btn-px: 1.6rem;
+  --btn-radius: var(--r-pill);
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-bg-hover: var(--color-primary-hover);
+  --btn-dark-bg: var(--graphite-900);
+  --btn-dark-bg-hover: var(--graphite-700);
+
+  --card-radius: var(--r-lg);
+  --card-border: var(--color-border);
+  --blob-radius: var(--r-blob);
+  --tile-radius: 32%;
+
+  --input-h: 56px;
+  --input-radius: var(--r-md);
+  --input-border: var(--color-border-strong);
+  --input-bg: var(--white);
+
+  --chip-h: 44px;
+  --drawer-w: min(600px, 100vw);
+}

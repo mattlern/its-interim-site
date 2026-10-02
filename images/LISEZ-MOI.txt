@@ -1,0 +1,30 @@
+PHOTOS DU SITE ITS INTÉRIM
+==========================
+
+Déposez les photos dans ce dossier avec exactement ces noms.
+Elles apparaissent automatiquement à la place des fonds "bois" provisoires.
+Le site les passe en noir et blanc (style du Groupe LMI) ; elles reprennent
+leurs couleurs au survol sur les tuiles métiers.
+
+Format conseillé : JPG, 1600 px de large maximum, moins de 400 Ko.
+
+Grands losanges en haut de page
+  accueil.jpg        page d'accueil (format carré conseillé)
+  agence.jpg         page L'agence
+  metiers.jpg        page Nos métiers
+  offres.jpg         page Offres
+  entreprises.jpg    page Entreprises
+  postuler.jpg       page Postuler
+  contact.jpg        page Contact (la devanture de l'agence, par exemple)
+
+Tuiles métiers (format carré)
+  metier-menuiserie.jpg
+  metier-agencement.jpg
+  metier-charpente.jpg
+  metier-plaquisterie.jpg
+  metier-etancheite.jpg
+
+Équipe (format portrait 4/5)
+  equipe-1.jpg
+  equipe-2.jpg
+  equipe-3.jpg
