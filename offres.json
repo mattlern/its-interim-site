@@ -1,0 +1,26 @@
+[
+  {
+    "id": "men-01",
+    "titre": "Menuisier poseur H/F",
+    "secteur": "Menuiserie",
+    "lieu": "Lyon 69008",
+    "debut": "Dès que possible",
+    "description": "Pose de menuiseries intérieures et extérieures chez des clients particuliers et professionnels. Expérience souhaitée 2 ans minimum, permis B apprécié."
+  },
+  {
+    "id": "char-01",
+    "titre": "Charpentier traditionnel H/F",
+    "secteur": "Charpente",
+    "lieu": "Villeurbanne",
+    "debut": "Octobre 2026",
+    "description": "Chantier de rénovation de combles et ossature bois. Lecture de plans requise, CAP charpente ou expérience équivalente."
+  },
+  {
+    "id": "age-01",
+    "titre": "Agenceur cuisiniste H/F",
+    "secteur": "Agencement",
+    "lieu": "Lyon & environs",
+    "debut": "Dès que possible",
+    "description": "Pose de cuisines équipées et mobilier sur mesure chez le particulier. Maîtrise de l'outillage électroportatif, sens de la finition."
+  }
+]
