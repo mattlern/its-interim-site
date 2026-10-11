@@ -291,8 +291,6 @@ a.tile:focus-visible { outline-offset: 6px; }
   transform: rotate(45deg);
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
-.marquee--violet { background: var(--violet-600); }
-.marquee--violet .marquee__track { animation-direction: reverse; animation-duration: 60s; }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
 }
