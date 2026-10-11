@@ -137,25 +137,38 @@ p { text-wrap: pretty; }
 .section--tight { padding-block: clamp(3rem, 2rem + 3vw, 5rem); }
 
 /* ---------- Typographie ---------- */
-.display {
-  font-size: var(--fs-display);
-  font-weight: 800;
+/* Titres : capitales fines, mots-clés en gras, trait rouge dessous
+   (la mise en forme des titres du site historique d'ITS) */
+.display, .h1, .h2 {
+  font-family: var(--font-body);
+  font-weight: 300;
   text-transform: uppercase;
-  line-height: .9;
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
+  line-height: 1.1;
 }
-.h1 {
-  font-size: var(--fs-h1);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: .94;
+.display { font-size: var(--fs-display); }
+.h1 { font-size: var(--fs-h1); }
+.h2 { font-size: var(--fs-h2); }
+.display b, .h1 b, .h2 b { font-weight: 700; }
+
+.display::after, .h1::after, .h2::after {
+  content: "";
+  display: block;
+  width: min(4.4em, 42%);
+  height: max(4px, .09em);
+  margin-top: .45em;
+  background: var(--title-bar, var(--color-primary));
+  transform-origin: left center;
 }
-.h2 {
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1;
-}
+.display::after, .h1::after { animation: bar-in .9s var(--ease-out) .55s both; }
+@keyframes bar-in { from { transform: scaleX(0); } }
+.js .reveal .h2::after { transform: scaleX(0); transition: transform .9s var(--ease-out) .25s; }
+.js .reveal.is-in .h2::after { transform: none; }
+.sec-head:not(.sec-head--left) .h2::after,
+.cta-band .display::after,
+.nf .h1::after { margin-inline: auto; transform-origin: center; }
+.section--red, .cta-band { --title-bar: var(--white); }
+.section--ink { --title-bar: var(--red-400); }
 .h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.08; }
 .h4 {
   font-family: var(--font-display);

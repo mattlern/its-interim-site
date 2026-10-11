@@ -116,7 +116,7 @@
   <h3 class="offer__title"><a class="offer__link" href="offres.html#${e(o.slug)}" data-offre="${e(o.slug)}">${e(o.titre)}</a></h3>
   <ul class="offer__meta">${meta}</ul>
   <p class="offer__desc">${e(cut(o.description, 150))}</p>
-  <div class="offer__foot"><span class="offer__more">Voir l'offre ${ITS.icon('arrow')}</span>${o.salaire ? `<span class="offer__ref">${e(o.salaire)}</span>` : ''}</div>
+  <div class="offer__foot"><span class="offer__more">Lire la suite ${ITS.icon('arrow')}</span>${o.salaire ? `<span class="offer__ref">${e(o.salaire)}</span>` : ''}</div>
 </article>`;
   };
 
@@ -218,7 +218,7 @@
         const n = Number(latest.dataset.latest) || 3;
         latest.innerHTML = offres.length
           ? offres.slice(0, n).map(ITS.offerCard).join('')
-          : `<p class="muted">Aucune offre en ligne pour le moment. <a class="link" href="postuler.html">Déposez une candidature</a>, on vous appelle dès qu'une mission arrive.</p>`;
+          : `<p class="muted">Aucune offre en ligne pour le moment. Vous pouvez <a class="link" href="postuler.html">déposer une candidature</a>.</p>`;
       })
       .catch(() => {
         if (latest) latest.innerHTML = `<p class="muted">Les offres n'ont pas pu se charger. Appelez l'agence au <a class="link" href="tel:${ITS.TEL}">${ITS.PHONE}</a>.</p>`;
@@ -331,10 +331,10 @@
   ['dragleave', 'drop'].forEach((t) => document.addEventListener(t, (e) => e.target.closest?.('[data-file]')?.classList.remove('is-drag')));
 
   const DONE = {
-    candidature: ['Candidature envoyée', 'Merci ! Un chargé d\'affaires vous appelle pour faire le point avec vous.'],
-    offre: ['Candidature envoyée', 'Merci ! On revient vers vous très vite au sujet de cette offre.'],
-    entreprise: ['Demande envoyée', 'Merci. Un chargé d\'affaires vous rappelle pour préciser votre besoin.'],
-    contact: ['Message envoyé', 'Merci, on vous répond rapidement.'],
+    candidature: ['Candidature envoyée', 'Merci, votre candidature a bien été envoyée.'],
+    offre: ['Candidature envoyée', 'Merci, votre candidature à cette offre a bien été envoyée.'],
+    entreprise: ['Demande envoyée', 'Merci, votre demande a bien été envoyée.'],
+    contact: ['Message envoyé', 'Merci. Nous vous répondrons dans les meilleurs délais.'],
   };
 
   const showDone = (form) => {

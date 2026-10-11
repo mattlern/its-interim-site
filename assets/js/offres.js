@@ -85,7 +85,7 @@
     const n = res.length;
     countEl.textContent = !n ? 'Aucune offre' : isFiltered()
       ? `${n} offre${n > 1 ? 's' : ''} trouvée${n > 1 ? 's' : ''}`
-      : `${n} offre${n > 1 ? 's' : ''} disponible${n > 1 ? 's' : ''}`;
+      : `${n} offre${n > 1 ? 's' : ''} en ligne`;
     resetBtns[0].hidden = !isFiltered();
     updateChips();
   };
@@ -163,7 +163,7 @@ ${bullets('Votre profil', o.profil)}
     <label class="file" data-file>
       <input type="file" name="cv" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.heic">
       <span class="file__icon">${ITS.icon('upload')}</span>
-      <span class="file__txt"><span class="file__name" data-file-name>Ajouter un fichier ou une photo</span><span class="hint">Pas de CV ? Envoyez sans, on vous appelle.</span></span>
+      <span class="file__txt"><span class="file__name" data-file-name>Ajouter un fichier ou une photo</span><span class="hint">PDF, Word ou photo prise avec votre téléphone</span></span>
     </label>
   </div>
   <div class="field"><label class="check"><input type="checkbox" name="consentement" required><span>J'accepte qu'ITS Intérim utilise ces informations pour traiter ma candidature. <a class="link" href="mentions-legales.html#confidentialite">En savoir plus</a></span></label></div>

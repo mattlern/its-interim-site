@@ -14,7 +14,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/components.css">
@@ -58,7 +58,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
     <a class="menu__link" href="contact.html" style="--i:5">Contact<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
   <div class="menu__foot">
-    <a class="btn btn--primary btn--block" href="postuler.html">Postuler en 1 minute <svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn--primary btn--block" href="postuler.html">Déposer ma candidature <svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn btn--ghost-light btn--block" href="tel:+33478776877"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> 04 78 77 68 77</a>
     <p class="muted">277 avenue Berthelot, 69008 Lyon · Membre du Groupe LMI</p>
   </div>
@@ -68,14 +68,14 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
   <div class="wrap phero__grid">
     <div class="phero__text">
       <nav class="crumbs anim" style="--i:0" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Offres de mission</span></nav>
-      <h1 class="h1"><span class="line" style="--i:1"><span>Offres de</span></span><span class="line" style="--i:2"><span class="accent">mission</span></span></h1>
-      <p class="lead anim" style="--i:3"><strong><span data-offres-count>Plusieurs</span> missions</strong> à pourvoir à Lyon et en Rhône-Alpes. Ouvrez une offre pour postuler en une minute, ou appelez l'agence au <a class="link" href="tel:+33478776877">04 78 77 68 77</a>.</p>
+      <h1 class="h1"><span class="line" style="--i:1"><span>Les <b>dernières offres</b></span></span><span class="line" style="--i:2"><span>de mission d'ITS Intérim</span></span></h1>
+      <p class="lead anim" style="--i:3">Nous vous invitons à répondre à une mission, un formulaire vous sera proposé pour vous permettre de nous laisser vos coordonnées et votre CV.</p>
     </div>
     <div class="phero__visual">
       <div class="dia dia--sm vt-dia">
         <span class="dia__o dia__o--l" aria-hidden="true"></span>
         <span class="dia__o dia__o--r" aria-hidden="true"></span>
-        <div class="dia__photo ph" data-label="Photo à venir"><img src="images/offres.jpg" alt="Poseur de menuiseries sur un chantier" onerror="this.remove()"></div>
+        <div class="dia__photo ph" data-label="Photo à venir"><img src="images/offres.jpg" alt="" onerror="this.remove()"></div>
         <span class="dia__curl" aria-hidden="true"></span>
       </div>
     </div>
@@ -111,7 +111,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
     </div>
     <div class="empty" data-empty hidden>
       <h2 class="h3">Aucune offre ne correspond</h2>
-      <p>Les missions changent chaque semaine. Laissez-nous vos coordonnées : on vous appelle dès qu'une mission correspond à votre profil.</p>
+      <p>Essayez un autre métier ou un autre lieu, ou déposez une candidature spontanée.</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="postuler.html">Candidature spontanée <svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <button class="btn btn--outline" type="button" data-reset>Voir toutes les offres</button>
@@ -119,7 +119,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
     </div>
     <div class="empty" data-error hidden>
       <h2 class="h3">Les offres n'ont pas pu se charger</h2>
-      <p>Rechargez la page dans un instant, ou appelez l'agence : on vous dit tout de suite ce qui est disponible.</p>
+      <p>Rechargez la page dans un instant, ou appelez l'agence.</p>
       <a class="btn btn--primary" href="tel:+33478776877"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> 04 78 77 68 77</a>
     </div>
   </div>
@@ -129,12 +129,11 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
   <div class="wrap">
     <div class="blob blob--ink split reveal">
       <div class="split__body">
-        <p class="eyebrow">Candidature spontanée</p>
-        <h2 class="blob__title">Votre poste n'est pas dans la liste ?</h2>
-        <p class="muted">Beaucoup de missions sont pourvues avant même d'être publiées. Inscrivez-vous : on vous appelle dès qu'un chantier ou un atelier cherche votre profil.</p>
+        <h2 class="blob__title">Candidature <b>spontanée</b></h2>
+        <p class="muted">Déposez votre candidature, car nous recherchons toujours de nouveaux profils.</p>
       </div>
       <div class="btn-row">
-        <a class="btn btn--primary" href="postuler.html">Postuler en 1 minute <svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--primary" href="postuler.html">Déposer ma candidature <svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn--ghost-light" href="tel:+33478776877"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> 04 78 77 68 77</a>
       </div>
     </div>
@@ -167,7 +166,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
         <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="m1" d="M24 1.5 46.5 24 24 46.5 1.5 24Z"/><path class="m2" d="M24 1.5C16 9.6 13 17 13 24s3 14.4 11 22.5c-4.3-8-6-15.3-6-22.5S19.7 9.5 24 1.5Z"/></svg>
         <span class="brand__txt"><span class="brand__name">ITS <b>Intérim</b></span><span class="brand__group">Groupe LMI</span></span>
       </a>
-      <p>Agence d'intérim spécialisée dans les métiers du bois et du second œuvre, à Lyon depuis 1977.</p>
+      <p>Agence lyonnaise d'experts dans les métiers de l'agencement, du bois et leurs dérivés. Depuis 1977.</p>
       <address class="footer__addr">
         <span>277 avenue Berthelot<br>69008 Lyon</span>
         <a class="footer__phone" href="tel:+33478776877">04 78 77 68 77</a>
@@ -177,7 +176,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
       <h2 class="footer__title" id="f-cand">Candidats</h2>
       <ul class="footer__list">
         <li><a href="offres.html">Offres de mission</a></li>
-        <li><a href="postuler.html">Postuler en 1 minute</a></li>
+        <li><a href="postuler.html">Déposer ma candidature</a></li>
         <li><a href="metiers.html">Nos métiers</a></li>
         <li><a href="postuler.html#faq">Questions fréquentes</a></li>
       </ul>
@@ -194,7 +193,7 @@ addEventListener('pagereveal', function (e) { if (e.viewTransition) document.doc
       <h2 class="footer__title" id="f-its">ITS Intérim</h2>
       <ul class="footer__list">
         <li><a href="agence.html">L'agence</a></li>
-        <li><a href="agence.html#groupe">Le Groupe LMI</a></li>
+        <li><a href="index.html#groupe">Le Groupe LMI</a></li>
         <li><a href="contact.html">Contact et accès</a></li>
       </ul>
     </nav>

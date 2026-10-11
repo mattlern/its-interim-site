@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gestion des offres · ITS Intérim</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); font-size: 17px; line-height: 1.55; color: var(--color-text); background: var(--color-bg-alt); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1 { font-weight: 300; text-transform: uppercase; font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.3rem); line-height: 1.1; margin: 0 0 .4rem; }
+  h1 b { font-weight: 700; }
+  h1::after { content: ""; display: block; width: 4em; height: 5px; margin-top: .45em; background: var(--color-primary); }
+  h2 { font-size: 1.15rem; margin: 0 0 .8rem; }
+  p { margin: 0 0 .8rem; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+  .steps li { background: var(--white); border-radius: var(--r-lg); padding: 1.1rem 1.2rem; border: 1px solid var(--color-border); }
+  .num { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--color-primary); color: var(--white); font-weight: 700; margin-bottom: .5rem; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 1.4rem; }
+  label { display: block; font-weight: 600; margin: .9rem 0 .3rem; }
+  label small { font-weight: 400; color: var(--color-text-muted); }
+  input, textarea { width: 100%; font: inherit; padding: .75rem .9rem; border: 1.5px solid var(--color-border-strong); border-radius: var(--r-md); background: var(--white); color: inherit; }
+  textarea { min-height: 120px; resize: vertical; }
+  input:focus, textarea:focus { outline: none; border-color: var(--graphite-900); box-shadow: 0 0 0 4px var(--red-100); }
+  button, .btn { font: inherit; font-weight: 600; cursor: pointer; border-radius: var(--r-pill); border: 2px solid transparent; padding: .75rem 1.3rem; text-decoration: none; display: inline-block; }
+  .primary { background: var(--color-primary); color: var(--white); }
+  .dark { background: var(--graphite-900); color: var(--white); }
+  .ghost { background: transparent; border-color: var(--color-border-strong); color: inherit; padding: .4rem .9rem; font-size: .9rem; }
+  .danger { color: var(--red-700); }
+  .row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.1rem; align-items: center; }
+  .offer { border: 1px solid var(--color-border); border-radius: var(--r-md); padding: .9rem 1rem; margin-bottom: .6rem; }
+  .offer strong { display: block; }
+  .meta { color: var(--color-text-muted); font-size: .9rem; }
+  .notice { padding: .9rem 1rem; border-radius: var(--r-md); background: var(--red-50); border: 1px solid var(--red-200); margin: 1rem 0; font-weight: 600; }
+  .ok { background: var(--success-50); border-color: var(--success-600); color: var(--success-600); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gestion <b>des offres</b></h1>
+  <p>Cette page sert à ajouter, modifier ou supprimer les offres de mission du site. Rien ne change sur le site tant que les 3 étapes ne sont pas terminées.</p>
+
+  <ol class="steps">
+    <li><span class="num">1</span><h2>Préparer les offres</h2><p>Ajoutez, modifiez ou supprimez les offres ci-dessous. Les offres déjà en ligne sont chargées automatiquement.</p></li>
+    <li><span class="num">2</span><h2>Télécharger le fichier</h2><p>Cliquez sur « Télécharger offres.json ». Le fichier arrive dans votre dossier Téléchargements. Ne changez pas son nom.</p></li>
+    <li><span class="num">3</span><h2>Déposer le fichier</h2><p>Cliquez sur « Ouvrir la page de dépôt », glissez-y le fichier, puis cliquez sur le bouton vert « Commit changes ». Le site est à jour en une à deux minutes.</p></li>
+  </ol>
+
+  <p class="notice" id="notice" hidden></p>
+  <div class="card" id="import" hidden>
+    <h2>Charger les offres actuelles</h2>
+    <p>Les offres en ligne n'ont pas pu être chargées. Choisissez le dernier fichier offres.json pour repartir des offres existantes.</p>
+    <input type="file" id="file" accept=".json,application/json">
+  </div>
+
+  <div class="grid">
+    <form class="card" id="form">
+      <h2 id="form-title">Nouvelle offre</h2>
+      <label for="titre">Intitulé du poste</label>
+      <input id="titre" required placeholder="Menuisier poseur (H/F)">
+      <label for="lieu">Lieu <small>(facultatif)</small></label>
+      <input id="lieu" placeholder="Lyon et ses environs">
+      <label for="date">Date de début <small>(facultatif)</small></label>
+      <input id="date" placeholder="Dès que possible">
+      <label for="ref">Référence <small>(facultatif, sans espace)</small></label>
+      <input id="ref" placeholder="mp02">
+      <label for="description">Description</label>
+      <textarea id="description"></textarea>
+      <div class="row">
+        <button class="primary" type="submit" id="submit">Ajouter l'offre</button>
+        <button class="ghost" type="button" id="cancel" hidden>Annuler la modification</button>
+      </div>
+    </form>
+
+    <div class="card">
+      <h2>Offres <span id="count"></span></h2>
+      <div id="list"></div>
+      <div class="row">
+        <button class="dark" type="button" id="download">Télécharger offres.json</button>
+        <a class="btn ghost" id="upload" href="https://github.com/mattlern/its-interim-site/upload/main" target="_blank" rel="noopener">Ouvrir la page de dépôt</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const FIELDS = ['titre', 'lieu', 'date', 'ref', 'description'];
+  let offres = [];
+  let editing = -1;
+  let dirty = false;
+
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const notice = (msg, ok) => { const n = $('notice'); n.textContent = msg; n.hidden = !msg; n.classList.toggle('ok', Boolean(ok)); };
+  const load = (data) => { offres = Array.isArray(data) ? data : (data.offres || []); render(); };
+
+  const render = () => {
+    $('count').textContent = `(${offres.length})`;
+    /* la dernière offre du fichier est affichée en premier sur le site */
+    $('list').innerHTML = offres.length ? offres.map((o, i) => `<div class="offer">
+      <strong>${esc(o.titre)}</strong>
+      <span class="meta">${esc([o.lieu, o.date, o.ref && 'Réf. ' + o.ref].filter(Boolean).join(' · '))}</span>
+      <div class="row" style="margin-top:.5rem">
+        <button class="ghost" type="button" data-edit="${i}">Modifier</button>
+        <button class="ghost danger" type="button" data-del="${i}">Supprimer</button>
+      </div></div>`).reverse().join('') : '<p class="meta">Aucune offre pour le moment.</p>';
+  };
+
+  const resetForm = () => {
+    editing = -1;
+    $('form').reset();
+    $('form-title').textContent = 'Nouvelle offre';
+    $('submit').textContent = "Ajouter l'offre";
+    $('cancel').hidden = true;
+  };
+
+  $('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const o = editing >= 0 ? { ...offres[editing] } : {};
+    FIELDS.forEach((f) => { o[f] = $(f).value.trim(); });
+    o.ref = o.ref.replace(/\s+/g, '');
+    if (o.ref && offres.some((x, i) => i !== editing && String(x.ref).toLowerCase() === o.ref.toLowerCase())) {
+      notice('Cette référence est déjà utilisée par une autre offre. Choisissez-en une autre.');
+      $('ref').focus();
+      return;
+    }
+    if (editing >= 0) offres[editing] = o; else offres.push(o);
+    dirty = true;
+    notice('Offre enregistrée ici. Pensez aux étapes 2 et 3 pour la mettre en ligne.', true);
+    resetForm();
+    render();
+  });
+
+  $('cancel').addEventListener('click', resetForm);
+
+  $('list').addEventListener('click', (e) => {
+    const ed = e.target.closest('[data-edit]');
+    const del = e.target.closest('[data-del]');
+    if (ed) {
+      editing = Number(ed.dataset.edit);
+      FIELDS.forEach((f) => { $(f).value = offres[editing][f] || ''; });
+      $('form-title').textContent = "Modifier l'offre";
+      $('submit').textContent = 'Enregistrer la modification';
+      $('cancel').hidden = false;
+      $('titre').focus();
+    }
+    if (del) {
+      const i = Number(del.dataset.del);
+      if (!confirm(`Supprimer l'offre « ${offres[i].titre} » ?`)) return;
+      offres.splice(i, 1);
+      dirty = true;
+      resetForm();
+      render();
+      notice('Offre supprimée ici. Pensez aux étapes 2 et 3 pour mettre le site à jour.', true);
+    }
+  });
+
+  $('download').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify({ offres }, null, 2) + '\n'], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'offres.json';
+    a.click();
+    dirty = false;
+    notice('Fichier téléchargé. Dernière étape : ouvrez la page de dépôt et glissez-y le fichier offres.json.', true);
+  });
+
+  $('file').addEventListener('change', async (e) => {
+    try {
+      load(JSON.parse(await e.target.files[0].text()));
+      $('import').hidden = true;
+      notice('Offres chargées depuis le fichier.', true);
+    } catch {
+      notice("Ce fichier n'est pas un fichier offres.json valide.");
+    }
+  });
+
+  addEventListener('beforeunload', (e) => { if (dirty) e.preventDefault(); });
+
+  fetch('offres.json', { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
+    .then(load)
+    .catch(() => { $('import').hidden = false; render(); });
+})();
+</script>
+</body>
+</html>

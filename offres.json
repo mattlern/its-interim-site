@@ -1,71 +1,53 @@
 {
   "offres": [
     {
+      "titre": "Menuisier atelier (H/F)",
+      "lieu": "Lyon et ses environs",
+      "date": "",
+      "ref": "ma02",
+      "description": "Nous recherchons pour nos clients de Lyon et environs des menuisiers atelier (H/F). Sous la responsabilité d'un chef d'atelier, vous serez amené(e) à réaliser différents ouvrages (mobilier d'agencement et/ou menuiseries) à partir de plans. Le véhicule est un plus appréciable."
+    },
+    {
       "titre": "Maçons traditionnels (H/F)",
       "lieu": "Lyon (69)",
-      "date": "Dès que possible",
+      "date": "",
       "ref": "mt02",
-      "description": "Chantiers de rénovation en maçonnerie traditionnelle.",
-      "contrat": "Intérim",
-      "profil": ["Expérience en maçonnerie traditionnelle", "Habitude des chantiers de rénovation"]
-    },
-    {
-      "titre": "Menuisier atelier (H/F)",
-      "lieu": "Lyon et environs",
-      "date": "Dès que possible",
-      "ref": "ma02",
-      "description": "Fabrication en atelier, sous la responsabilité du chef d'atelier.",
-      "contrat": "Intérim",
-      "missions": ["Débit, usinage et assemblage", "Travail sur machines à bois traditionnelles", "Préparation des éléments avant pose"],
-      "profil": ["Expérience en atelier de menuiserie"]
-    },
-    {
-      "titre": "Chef d'équipe étanchéité (H/F)",
-      "lieu": "Lyon (69)",
-      "date": "Dès que possible",
-      "ref": "cee01",
-      "description": "Encadrement d'une équipe sur des chantiers d'étanchéité. Longue mission.",
-      "contrat": "Intérim",
-      "duree": "Longue mission",
-      "profil": ["Expérience confirmée en étanchéité", "Encadrement d'équipe", "Permis B exigé"]
+      "description": "Recherchons pour nos clients H/F maçons traditionnels spécialisés en rénovation."
     },
     {
       "titre": "Menuisier agenceur atelier (H/F)",
       "lieu": "Vaulx-en-Velin (69)",
-      "date": "Dès que possible",
+      "date": "",
       "ref": "ma01",
-      "description": "Fabrication d'agencements en atelier. Maîtrise de la programmation sur commande numérique exigée.",
-      "contrat": "Intérim",
-      "profil": ["Programmation et conduite de commande numérique", "Lecture de plans", "Expérience en atelier d'agencement"]
+      "description": "Recherchons un menuisier agenceur atelier sachant utiliser la programmation de commandes numériques."
     },
     {
-      "titre": "Plaquiste confirmé (H/F)",
-      "lieu": "Lyon et environs",
-      "date": "Dès que possible",
-      "ref": "pc01",
-      "description": "Missions de plaquisterie sur des chantiers de Lyon et de ses environs.",
-      "contrat": "Intérim",
-      "missions": ["Cloisons et doublages sur ossature métallique", "Pose de plaques BA13 et de faux plafonds", "Bandes et finitions"],
-      "profil": ["Plaquiste confirmé, autonome sur chantier"]
-    },
-    {
-      "titre": "Charpentier couvreur (H/F)",
-      "lieu": "Grand Lyon",
-      "date": "Dès que possible",
-      "ref": "cc01",
-      "description": "Nombreuses missions à pourvoir sur le Grand Lyon, en charpente et en couverture.",
-      "contrat": "Intérim",
-      "profil": ["Expérience en charpente et en couverture", "Habitude du travail en hauteur"]
+      "titre": "Chef d'équipe étanchéité (H/F)",
+      "lieu": "Lyon (69)",
+      "date": "",
+      "ref": "cee01",
+      "description": "Recherchons chef d'équipe étanchéité : longue mission. Permis indispensable."
     },
     {
       "titre": "Menuisier poseur (H/F)",
-      "lieu": "Lyon et environs",
-      "date": "Dès que possible",
+      "lieu": "Lyon et ses environs",
+      "date": "",
       "ref": "mp01",
-      "description": "Pose de menuiseries intérieures et extérieures sur des chantiers de Lyon et de ses environs. Véhicule personnel apprécié.",
-      "contrat": "Intérim",
-      "missions": ["Pose de fenêtres, portes et huisseries", "Pose de placards, habillages et parquets", "Réglages et finitions"],
-      "profil": ["Expérience en pose de menuiseries", "Autonomie sur chantier", "Véhicule personnel apprécié"]
+      "description": "Nous recherchons pour nos clients de Lyon et environs des menuisiers poseurs (H/F). Le véhicule est un plus appréciable."
+    },
+    {
+      "titre": "Charpentier couvreur (H/F)",
+      "lieu": "Lyon et ses environs",
+      "date": "",
+      "ref": "cc01",
+      "description": "Recherchons des charpentiers couvreurs. Nombreuses missions à pourvoir sur Grand Lyon."
+    },
+    {
+      "titre": "Plaquiste confirmé (H/F)",
+      "lieu": "Lyon et ses environs",
+      "date": "",
+      "ref": "pc01",
+      "description": "Recherchons des plaquistes confirmés."
     }
   ]
 }
