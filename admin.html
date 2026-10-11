@@ -43,7 +43,16 @@
 </style>
 </head>
 <body>
-<div class="wrap">
+<form class="wrap" id="gate" style="max-width:460px">
+  <div class="card">
+    <h2>Accès réservé</h2>
+    <label for="pwd">Mot de passe</label>
+    <input id="pwd" type="password" autocomplete="current-password" required>
+    <p class="notice" id="gate-error" hidden>Mot de passe incorrect.</p>
+    <div class="row"><button class="primary" type="submit">Entrer</button></div>
+  </div>
+</form>
+<div class="wrap" id="app" hidden>
   <h1>Gestion <b>des offres</b></h1>
   <p>Cette page sert à ajouter, modifier ou supprimer les offres de mission du site. Rien ne change sur le site tant que les 3 étapes ne sont pas terminées.</p>
 
@@ -185,10 +194,33 @@
 
   addEventListener('beforeunload', (e) => { if (dirty) e.preventDefault(); });
 
-  fetch('offres.json', { cache: 'no-store' })
-    .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
-    .then(load)
-    .catch(() => { $('import').hidden = false; render(); });
+  const start = () => {
+    $('gate').hidden = true;
+    $('app').hidden = false;
+    fetch('offres.json', { cache: 'no-store' })
+      .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(load)
+      .catch(() => { $('import').hidden = false; render(); });
+  };
+
+  /* Mot de passe : seule son empreinte est stockée ici, pas le mot de passe lui-même */
+  const EMPREINTE = '700ec643c8051f38d97d035598ff7313279983fdafc6c92504291ad897b2a440';
+  const empreinte = async (txt) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(txt)))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const ouvert = () => { try { return sessionStorage.getItem('its-admin') === EMPREINTE; } catch { return false; } };
+
+  $('gate').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (await empreinte($('pwd').value) !== EMPREINTE) {
+      $('gate-error').hidden = false;
+      $('pwd').select();
+      return;
+    }
+    try { sessionStorage.setItem('its-admin', EMPREINTE); } catch { /* stockage indisponible */ }
+    start();
+  });
+
+  if (ouvert()) start(); else $('pwd').focus();
 })();
 </script>
 </body>
