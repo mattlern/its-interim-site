@@ -196,6 +196,7 @@
   .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .tiles > li:nth-child(4) { grid-column: span 2; }
   .tiles > li:nth-child(5) { grid-column: 2 / span 2; }
+  .tiles > li:nth-child(3):last-child { grid-column: 2 / span 2; }
 }
 
 .tile {

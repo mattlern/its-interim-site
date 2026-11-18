@@ -6,7 +6,7 @@
 
   /* Adresse du service qui recevra les formulaires (Formspree, Web3Forms…).
      Tant qu'elle est vide, les formulaires fonctionnent en mode démonstration. */
-  ITS.FORM_ENDPOINT = '';
+  ITS.FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@its-interim.fr';
   ITS.PHONE = '04 78 77 68 77';
   ITS.TEL = '+33478776877';
 
@@ -56,13 +56,11 @@
 
   /* ---------- Offres : chargement et carte ---------- */
   const FAMILLE_RULES = [
-    ['Étanchéité', /etanch/],
-    ['Plaquisterie', /plaqu|platr/],
-    ['Agencement', /agenc|cuisin|ebenist|stand/],
-    ['Charpente-couverture', /charpent|couvr|zingu|ossature|bardeu/],
+    ['Ébénisterie', /ebenist/],
+    ['Agencement', /agenc|cuisin|stand/],
     ['Menuiserie', /menuis|parquet|toupill|fenetre/],
   ];
-  ITS.FAMILLES = ['Menuiserie', 'Agencement', 'Charpente-couverture', 'Plaquisterie', 'Étanchéité', 'Autres métiers'];
+  ITS.FAMILLES = ['Menuiserie', 'Agencement', 'Ébénisterie', 'Autres métiers'];
 
   const guessFamille = (titre) => {
     const t = ITS.norm(titre);
@@ -361,6 +359,8 @@ ${ITS.FORM_ENDPOINT ? '' : '<p class="form-note">Version de démonstration : le 
     const data = new FormData(form);
     data.append('formulaire', form.dataset.form);
     data.append('page', location.pathname);
+    data.append('_subject', `Site ITS Intérim : ${({ candidature: 'candidature spontanée', offre: 'candidature à une offre', entreprise: 'demande de personnel', contact: 'message' })[form.dataset.form] || 'message'}`);
+    data.append('_template', 'table');
     try {
       if (ITS.FORM_ENDPOINT) {
         const r = await fetch(ITS.FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
